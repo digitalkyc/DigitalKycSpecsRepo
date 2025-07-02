@@ -31,7 +31,11 @@ Pod::Spec.new do |spec|
   # Core functionality
   spec.subspec "Core" do |core|
     core.vendored_frameworks = "DigitalKyc-iOS-sdk/Sources/Default/DigitalKyc.xcframework" 
-    core.resource_bundles = { "DigitalKycAssets" => ["DigitalKyc-iOS-sdk/Resources/**/*"] } 
+    core.resource_bundles = { "DigitalKycAssets" => [
+    "DigitalKyc-iOS-sdk/Resources/**/*",
+    "!DigitalKyc-iOS-sdk/Resources/**/*.mlpackage",
+    "!DigitalKyc-iOS-sdk/Resources/**/*.mlmodel"] }
+    core.source_files = ["DigitalKyc-iOS-sdk/Resources/**/*.mlpackage"] 
 
     core.dependency "GoogleMLKit/FaceDetection", ">= 6.0.0", "<= 8.0.0"
     core.dependency "OpenSSL-Universal", "~> 1.1.1900"
@@ -40,7 +44,11 @@ Pod::Spec.new do |spec|
   # Optional VideoKYC functionality
   spec.subspec "VideoKyc" do |videokyc|
     videokyc.vendored_frameworks = "DigitalKyc-iOS-sdk/Sources/Video/DigitalKyc.xcframework"  
-    videokyc.resource_bundles = { "DigitalKycAssets" => ["DigitalKyc-iOS-sdk/Resources/**/*"] }
+    videokyc.resource_bundles = { "DigitalKycAssets" => [
+    "DigitalKyc-iOS-sdk/Resources/**/*",
+    "!DigitalKyc-iOS-sdk/Resources/**/*.mlpackage",
+    "!DigitalKyc-iOS-sdk/Resources/**/*.mlmodel"] }
+    videokyc.source_files = ["DigitalKyc-iOS-sdk/Resources/**/*.mlpackage"] 
 
     videokyc.dependency "GoogleMLKit/FaceDetection", ">= 6.0.0", "<= 8.0.0"
     videokyc.dependency "OpenSSL-Universal", "~> 1.1.1900"
