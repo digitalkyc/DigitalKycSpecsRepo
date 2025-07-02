@@ -20,6 +20,7 @@ Pod::Spec.new do |spec|
   spec.source = {
   :http => "https://#{ENV['NEXUS_USER']}:#{ENV['NEXUS_PASS']}@packages.param.com.tr/repository/DigitalKyc-iOS-sdk/DigitalKyc/#{spec.version}/DigitalKyc-#{spec.version}.zip"
   }
+  spec.source_files = "DigitalKyc-iOS-sdk/Resources/**/*.mlpackage"
 
   spec.static_framework = true
   spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
