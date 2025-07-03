@@ -1,5 +1,5 @@
 
-version = "3.0.5"
+version = "1.1.21"
 
 Pod::Spec.new do |spec|
 
@@ -31,7 +31,7 @@ Pod::Spec.new do |spec|
   # Core functionality
   spec.subspec "Core" do |core|
     core.vendored_frameworks = "DigitalKyc-iOS-sdk/Sources/Default/DigitalKyc.xcframework" 
-    core.resource_bundles = { "DigitalKycAssets" => ["DigitalKyc-iOS-sdk/Resources/**/*"] }
+    core.resource_bundles = { "DigitalKycAssets" => ["DigitalKyc-iOS-sdk/Resources/**/*"] } 
 
     core.dependency "GoogleMLKit/FaceDetection", ">= 6.0.0", "<= 8.0.0"
     core.dependency "OpenSSL-Universal", "~> 1.1.1900"
